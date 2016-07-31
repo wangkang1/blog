@@ -1,0 +1,29 @@
+*  {
+	padding:0;
+	margin:0;
+}
+body {
+	margin:40px;
+}
+ul {
+	margin:0 auto;
+	width:480px;
+	height:360px;
+	background:#333;
+	list-style-type:none;
+    overflow:hidden; /*��������*/
+}
+ul li {
+	width:480px;
+	height:360px;
+}
+ul li img {
+	padding:40px 0 0 40px;
+}
+p {
+	text-align:center;
+	padding-top:10px;
+}
+p img {
+	border:1px solid black;
+}
