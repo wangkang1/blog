@@ -7,23 +7,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>博客记录</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基于锚点的相册">
+  <meta name="description" content="Document
+	
+	body,ul,li{ margin:0; padding:0; font-size:13px;}
+	ul,li{list-style: none;}
+	#select{width: 186px;margin: 80px auto;position: relative;z-index: 3;}
+	#select cite { width: 150px;heigh">
 <meta property="og:type" content="website">
 <meta property="og:title" content="博客记录">
-<meta property="og:url" content="http://wangkang.pub/index/index.html">
+<meta property="og:url" content="http://wangkang.pub/demo1/慕课网实例/下拉菜单.html">
 <meta property="og:site_name" content="博客记录">
-<meta property="og:description" content="基于锚点的相册">
-<meta property="og:image" content="http://wangkang.pub/images/pics1.jpg">
-<meta property="og:image" content="http://wangkang.pub/images/pics2.jpg">
-<meta property="og:image" content="http://wangkang.pub/images/pics3.jpg">
-<meta property="og:image" content="http://wangkang.pub/images/p1.jpg">
-<meta property="og:image" content="http://wangkang.pub/images/p2.jpg">
-<meta property="og:image" content="http://wangkang.pub/images/p3.jpg">
-<meta property="og:updated_time" content="2017-03-31T12:35:26.165Z">
+<meta property="og:description" content="Document
+	
+	body,ul,li{ margin:0; padding:0; font-size:13px;}
+	ul,li{list-style: none;}
+	#select{width: 186px;margin: 80px auto;position: relative;z-index: 3;}
+	#select cite { width: 150px;heigh">
+<meta property="og:updated_time" content="2017-03-14T10:18:31.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客记录">
-<meta name="twitter:description" content="基于锚点的相册">
-<meta name="twitter:image" content="http://wangkang.pub/images/pics1.jpg">
+<meta name="twitter:description" content="Document
+	
+	body,ul,li{ margin:0; padding:0; font-size:13px;}
+	ul,li{list-style: none;}
+	#select{width: 186px;margin: 80px auto;position: relative;z-index: 3;}
+	#select cite { width: 150px;heigh">
   
     <link rel="alternative" href="/atom.xml" title="博客记录" type="application/atom+xml">
   
@@ -219,8 +227,8 @@
       <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/index/index.html" class="article-date">
-  	<time datetime="2017-03-31T13:00:41.407Z" itemprop="datePublished">2017-03-31</time>
+      <a href="/demo1/慕课网实例/下拉菜单.html" class="article-date">
+  	<time datetime="2017-03-31T13:00:40.176Z" itemprop="datePublished">2017-03-31</time>
 </a>
     </div>
   
@@ -231,31 +239,103 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+        <!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>基于锚点的相册</title>
-<link href="style/style.css" rel="stylesheet" type="text/css">
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body,ul,li{ margin:0; padding:0; font-size:13px;}
+	ul,li{list-style: none;}
+	#select{width: 186px;margin: 80px auto;position: relative;z-index: 3;}
+	#select cite { width: 150px;height: 24px;line-height: 24px;display: block;color: #807a62;cursor:pointer;font-style: normal;padding-left: 4px;padding-right: 30px;border: 1px solid #333333; }
+	#select ul {width: 184px;border: 1px solid #333333;background: #ffffff;position: absolute;z-index: 6;margin-top: -1px;display:none;}
+	#dselect ul li{height:24px; line-height:24px;}
+	#select ul li a{display:block; height:24px; color:#333333; text-decoration:none; padding-left:10px; padding-right:10px;}
+
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+	var box=document.getElementById('select'),
+	    title=box.getElementsByTagName('cite')[0],
+	    menu=box.getElementsByTagName('ul')[0],
+	    as=box.getElementsByTagName('a'),
+        index=-1;
+
+    // 点击三角时
+    title.onclick=function(event){
+    	event=event || window.event;
+    	if(event.stopPropagation){
+    		event.stopPropagation();
+    	}else{
+    		event.cancelBubble=true;
+    	}
+    	menu.style.display='block';
+        document.onkeyup=function(e){
+          e=e || window.event;
+          for(var i=0;i<as.length;i++){
+            as[i].style.background='none';
+          }
+          // 如果按下了向下方向键
+          if(e.keyCode==40){
+             index++;
+             if(index>=as.length){
+               index=0;
+             }
+             as[index].style.background="#ccc";
+          }
+          // 如果按下了向上方向键
+          if(e.keyCode==38){
+             if(index<=0){
+               index=as.length;
+             }
+             index--;   
+             as[index].style.background="#ccc";      
+          }
+          // 如果按下了回车键
+          if(e.keyCode==13 && index!=-1){
+            title.innerHTML=as[index].innerHTML;
+            for(var i=0;i<as.length;i++){
+              as[i].style.background='none';
+            }
+            menu.style.display='none';
+            index=-1;    
+          }
+        }
+}  
+
+    for(var i=0;i<as.length;i++){
+    	as[i].onmouseover=function(){
+    		this.style.background='#ccc';
+    	}
+    	as[i].onmouseout=function(){
+    		this.style.background='none';
+    	}    	
+    	as[i].onclick=function(){
+    		title.innerHTML=this.innerHTML;
+    	}
+    }
+    
+    // 点击页面空白处时
+    document.onclick=function(){
+      menu.style.display='none';
+    }
+}
+	</script>
 </head>
 <body>
-	
-	<ul>
-		<li><a name="p1"><img src="images/pics1.jpg" alt="pics1"></a></li>
-		<li><a name="p2"><img src="images/pics2.jpg" alt="pics2"></a></li>
-		<li><a name="p3"><img src="images/pics3.jpg" alt="pics3"></a></li>
-	</ul>
-	
-	<p>
-		<a href="#p1"><img src="images/p1.jpg" alt="p1"></a>
-		<a href="#p2"><img src="images/p2.jpg" alt="p2"></a>
-		<a href="#p3"><img src="images/p3.jpg" alt="p3"></a>
-	</p>
-	
+	<div id="select">
+      <cite>请选择分类</cite>
+      <ul>
+         <li id="li"><a href="#">ASP开发</a></li>
+         <li><a href="#">.NET开发</a></li>
+         <li><a href="#">PHP开发</a></li>
+         <li><a href="#">Javascript开发</a></li>
+         <li><a href="#">Java特效</a></li>
+      </ul>
+    </div>
 </body>
 </html>
-
       
     </div>
     

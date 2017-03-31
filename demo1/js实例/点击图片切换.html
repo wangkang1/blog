@@ -7,23 +7,45 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>博客记录</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基于锚点的相册">
+  <meta name="description" content="Document
+	
+	window.onload=function()
+	{
+		var oImg=document.getElementById(&quot;img1&quot;);
+		var arr=[&quot;img/5.jpg&quot;,&quot;img/6.jpg&quot;,&quot;img/7.jpg&quot;,&quot;img/4.jpg&quot;];
+		var num=0;
+		oImg.onclick=function()
+		{
+			num">
 <meta property="og:type" content="website">
 <meta property="og:title" content="博客记录">
-<meta property="og:url" content="http://wangkang.pub/index/index.html">
+<meta property="og:url" content="http://wangkang.pub/demo1/js实例/点击图片切换.html">
 <meta property="og:site_name" content="博客记录">
-<meta property="og:description" content="基于锚点的相册">
-<meta property="og:image" content="http://wangkang.pub/images/pics1.jpg">
-<meta property="og:image" content="http://wangkang.pub/images/pics2.jpg">
-<meta property="og:image" content="http://wangkang.pub/images/pics3.jpg">
-<meta property="og:image" content="http://wangkang.pub/images/p1.jpg">
-<meta property="og:image" content="http://wangkang.pub/images/p2.jpg">
-<meta property="og:image" content="http://wangkang.pub/images/p3.jpg">
-<meta property="og:updated_time" content="2017-03-31T12:35:26.165Z">
+<meta property="og:description" content="Document
+	
+	window.onload=function()
+	{
+		var oImg=document.getElementById(&quot;img1&quot;);
+		var arr=[&quot;img/5.jpg&quot;,&quot;img/6.jpg&quot;,&quot;img/7.jpg&quot;,&quot;img/4.jpg&quot;];
+		var num=0;
+		oImg.onclick=function()
+		{
+			num">
+<meta property="og:image" content="http://wangkang.pub/img/5.jpg">
+<meta property="og:updated_time" content="2017-03-26T04:17:42.816Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客记录">
-<meta name="twitter:description" content="基于锚点的相册">
-<meta name="twitter:image" content="http://wangkang.pub/images/pics1.jpg">
+<meta name="twitter:description" content="Document
+	
+	window.onload=function()
+	{
+		var oImg=document.getElementById(&quot;img1&quot;);
+		var arr=[&quot;img/5.jpg&quot;,&quot;img/6.jpg&quot;,&quot;img/7.jpg&quot;,&quot;img/4.jpg&quot;];
+		var num=0;
+		oImg.onclick=function()
+		{
+			num">
+<meta name="twitter:image" content="http://wangkang.pub/img/5.jpg">
   
     <link rel="alternative" href="/atom.xml" title="博客记录" type="application/atom+xml">
   
@@ -219,8 +241,8 @@
       <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/index/index.html" class="article-date">
-  	<time datetime="2017-03-31T13:00:41.407Z" itemprop="datePublished">2017-03-31</time>
+      <a href="/demo1/js实例/点击图片切换.html" class="article-date">
+  	<time datetime="2017-03-31T13:00:40.101Z" itemprop="datePublished">2017-03-31</time>
 </a>
     </div>
   
@@ -231,31 +253,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+        <!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>基于锚点的相册</title>
-<link href="style/style.css" rel="stylesheet" type="text/css">
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function()
+	{
+		var oImg=document.getElementById("img1");
+		var arr=["img/5.jpg","img/6.jpg","img/7.jpg","img/4.jpg"];
+		var num=0;
+		oImg.onclick=function()
+		{
+			num++;
+			if(num==arr.length)
+			{
+				num=0;
+			}
+			oImg.src=arr[num];
+		}
+	}	
+	</script>
 </head>
 <body>
-	
-	<ul>
-		<li><a name="p1"><img src="images/pics1.jpg" alt="pics1"></a></li>
-		<li><a name="p2"><img src="images/pics2.jpg" alt="pics2"></a></li>
-		<li><a name="p3"><img src="images/pics3.jpg" alt="pics3"></a></li>
-	</ul>
-	
-	<p>
-		<a href="#p1"><img src="images/p1.jpg" alt="p1"></a>
-		<a href="#p2"><img src="images/p2.jpg" alt="p2"></a>
-		<a href="#p3"><img src="images/p3.jpg" alt="p3"></a>
-	</p>
-	
+	<img id="img1" src="img/5.jpg" width="800" height="600">
 </body>
 </html>
-
       
     </div>
     

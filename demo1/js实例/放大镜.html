@@ -7,23 +7,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>博客记录</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基于锚点的相册">
+  <meta name="description" content="Document
+	
+	#div1 {width: 180px; height: 180px; position: relative; }
+	img {display: block;}
+	#div2 { display: none; width: 100px; height: 100px; background: yellow; opacity: 0.5; position: abso">
 <meta property="og:type" content="website">
 <meta property="og:title" content="博客记录">
-<meta property="og:url" content="http://wangkang.pub/index/index.html">
+<meta property="og:url" content="http://wangkang.pub/demo1/js实例/放大镜.html">
 <meta property="og:site_name" content="博客记录">
-<meta property="og:description" content="基于锚点的相册">
-<meta property="og:image" content="http://wangkang.pub/images/pics1.jpg">
-<meta property="og:image" content="http://wangkang.pub/images/pics2.jpg">
-<meta property="og:image" content="http://wangkang.pub/images/pics3.jpg">
-<meta property="og:image" content="http://wangkang.pub/images/p1.jpg">
-<meta property="og:image" content="http://wangkang.pub/images/p2.jpg">
-<meta property="og:image" content="http://wangkang.pub/images/p3.jpg">
-<meta property="og:updated_time" content="2017-03-31T12:35:26.165Z">
+<meta property="og:description" content="Document
+	
+	#div1 {width: 180px; height: 180px; position: relative; }
+	img {display: block;}
+	#div2 { display: none; width: 100px; height: 100px; background: yellow; opacity: 0.5; position: abso">
+<meta property="og:image" content="http://wangkang.pub/img/b2.jpg">
+<meta property="og:image" content="http://wangkang.pub/img/b1.jpg">
+<meta property="og:updated_time" content="2017-03-28T07:18:13.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客记录">
-<meta name="twitter:description" content="基于锚点的相册">
-<meta name="twitter:image" content="http://wangkang.pub/images/pics1.jpg">
+<meta name="twitter:description" content="Document
+	
+	#div1 {width: 180px; height: 180px; position: relative; }
+	img {display: block;}
+	#div2 { display: none; width: 100px; height: 100px; background: yellow; opacity: 0.5; position: abso">
+<meta name="twitter:image" content="http://wangkang.pub/img/b2.jpg">
   
     <link rel="alternative" href="/atom.xml" title="博客记录" type="application/atom+xml">
   
@@ -219,8 +227,8 @@
       <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/index/index.html" class="article-date">
-  	<time datetime="2017-03-31T13:00:41.407Z" itemprop="datePublished">2017-03-31</time>
+      <a href="/demo1/js实例/放大镜.html" class="article-date">
+  	<time datetime="2017-03-31T13:00:40.099Z" itemprop="datePublished">2017-03-31</time>
 </a>
     </div>
   
@@ -231,31 +239,79 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+        <!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>基于锚点的相册</title>
-<link href="style/style.css" rel="stylesheet" type="text/css">
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	#div1 {width: 180px; height: 180px; position: relative; }
+	img {display: block;}
+	#div2 { display: none; width: 100px; height: 100px; background: yellow; opacity: 0.5; position: absolute; filter: alpha(opacity=50); }
+	#div3 {width: 400px; height: 400px; border: 1px solid #000; position: absolute; left: 200px; top: 8px; overflow: hidden;}
+	#img2 { position: absolute; left: 0; top: 0;}
+	</style>
+	<script type="text/javascript">
+		window.onload=function()
+		{
+		var oDiv1 = document.getElementById('div1');
+				var oDiv2 = document.getElementById('div2');
+				var oDiv3 = document.getElementById('div3');
+				var oImg2 = document.getElementById('img2');
+				oDiv1.onmouseenter=function()
+				{
+					oDiv2.style.display="block";
+				}
+				oDiv1.onmousemove=function(ev)		
+				{
+					var e=ev|| event;
+					var L=e.clientX-oDiv2.offsetWidth/2;
+					var T = e.clientY - oDiv2.offsetHeight /2;
+					if (L < 0) 
+					{
+						L = 0;
+					} else if (L > oDiv1.offsetWidth - oDiv2.offsetWidth)
+					 {
+						L = oDiv1.offsetWidth - oDiv2.offsetWidth;
+					}
+					if (T < 0) {
+						T = 0;
+					} else if (T > oDiv1.offsetHeight - oDiv2.offsetHeight) {
+						T = oDiv1.offsetHeight - oDiv2.offsetHeight;
+					}
+					
+					
+					var scaleX = L / (oDiv1.offsetWidth - oDiv2.offsetWidth);
+					var scaleY = T / (oDiv1.offsetHeight - oDiv2.offsetHeight);
+					
+					
+					
+					oImg2.style.left = (oDiv3.clientWidth - oImg2.offsetWidth) * scaleX + 'px';
+					oImg2.style.top = (oDiv3.clientHeight - oImg2.offsetHeight) * scaleY + 'px';
+					
+					oDiv2.style.left = L + 'px';
+					oDiv2.style.top = T + 'px';
+					oDiv1.onmouseleave = function()
+					{
+					
+					oDiv2.style.display = 'none';
+					
+					}
+				}
+		}
+	</script>
 </head>
 <body>
-	
-	<ul>
-		<li><a name="p1"><img src="images/pics1.jpg" alt="pics1"></a></li>
-		<li><a name="p2"><img src="images/pics2.jpg" alt="pics2"></a></li>
-		<li><a name="p3"><img src="images/pics3.jpg" alt="pics3"></a></li>
-	</ul>
-	
-	<p>
-		<a href="#p1"><img src="images/p1.jpg" alt="p1"></a>
-		<a href="#p2"><img src="images/p2.jpg" alt="p2"></a>
-		<a href="#p3"><img src="images/p3.jpg" alt="p3"></a>
-	</p>
-	
+<div id="div1">
+ <img src="img/b2.jpg" id="img1">
+<div id="div2"></div>
+</div>
+		
+<div id="div3">
+<img src="img/b1.jpg" id="img2">
+</div>	
 </body>
 </html>
-
       
     </div>
     
